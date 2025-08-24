@@ -84,14 +84,14 @@ const GeoMap = () => {
           if (params.seriesType === "scatter") {
             const data = params.data;
             return `
-              <div style="padding: 8px;">
-                <h4 style="margin: 0 0 8px 0; color: #333;">${data.name}</h4>
-                <p style="margin: 4px 0; color: #666;"><strong>Country:</strong> ${data.country}</p>
-                <p style="margin: 4px 0; color: #666;"><strong>Region:</strong> ${data.region}</p>
-                <p style="margin: 4px 0; color: #666;"><strong>Population:</strong> ${data.population}</p>
-                <p style="margin: 4px 0; color: #666;"><strong>Timezone:</strong> ${data.timezone}</p>
-                <p style="margin: 4px 0; color: #666;"><strong>Description:</strong> ${data.description}</p>
-                <p style="margin: 4px 0; color: #999; font-size: 12px;">Coordinates: [${data.value[1].toFixed(2)}, ${data.value[0].toFixed(2)}]</p>
+              <div class="p-2">
+                <h4 class="m-0 mb-2 text-gray-800 font-semibold">${data.name}</h4>
+                <p class="my-1 text-gray-600"><span class="font-medium">Country:</span> ${data.country}</p>
+                <p class="my-1 text-gray-600"><span class="font-medium">Region:</span> ${data.region}</p>
+                <p class="my-1 text-gray-600"><span class="font-medium">Population:</span> ${data.population}</p>
+                <p class="my-1 text-gray-600"><span class="font-medium">Timezone:</span> ${data.timezone}</p>
+                <p class="my-1 text-gray-600"><span class="font-medium">Description:</span> ${data.description}</p>
+                <p class="my-1 text-gray-500 text-xs">Coordinates: [${data.value[1].toFixed(2)}, ${data.value[0].toFixed(2)}]</p>
               </div>
             `;
           }
@@ -104,14 +104,14 @@ const GeoMap = () => {
             if (countryPoint) {
               // Show detailed info for countries with points
               return `
-                <div style="padding: 8px;">
-                  <h4 style="margin: 0 0 8px 0; color: #333;">${countryPoint.name}</h4>
-                  <p style="margin: 4px 0; color: #666;"><strong>Country:</strong> ${countryPoint.country}</p>
-                  <p style="margin: 4px 0; color: #666;"><strong>Region:</strong> ${countryPoint.region}</p>
-                  <p style="margin: 4px 0; color: #666;"><strong>Population:</strong> ${countryPoint.population}</p>
-                  <p style="margin: 4px 0; color: #666;"><strong>Timezone:</strong> ${countryPoint.timezone}</p>
-                  <p style="margin: 4px 0; color: #666;"><strong>Description:</strong> ${countryPoint.description}</p>
-                  <p style="margin: 4px 0; color: #999; font-size: 12px;">Coordinates: [${countryPoint.value[1].toFixed(2)}, ${countryPoint.value[0].toFixed(2)}]</p>
+                <div class="p-2">
+                  <h4 class="m-0 mb-2 text-gray-800 font-semibold">${countryPoint.name}</h4>
+                  <p class="my-1 text-gray-600"><span class="font-medium">Country:</span> ${countryPoint.country}</p>
+                  <p class="my-1 text-gray-600"><span class="font-medium">Region:</span> ${countryPoint.region}</p>
+                  <p class="my-1 text-gray-600"><span class="font-medium">Population:</span> ${countryPoint.population}</p>
+                  <p class="my-1 text-gray-600"><span class="font-medium">Timezone:</span> ${countryPoint.timezone}</p>
+                  <p class="my-1 text-gray-600"><span class="font-medium">Description:</span> ${countryPoint.description}</p>
+                  <p class="my-1 text-gray-500 text-xs">Coordinates: [${countryPoint.value[1].toFixed(2)}, ${countryPoint.value[0].toFixed(2)}]</p>
                 </div>
               `;
             } else {
@@ -119,22 +119,22 @@ const GeoMap = () => {
               const countryInfo = params.data;
               if (countryInfo && countryInfo.capital) {
                 return `
-                  <div style="padding: 8px;">
-                    <h4 style="margin: 0 0 8px 0; color: #333;">${countryName}</h4>
-                    <p style="margin: 4px 0; color: #666;"><strong>Capital:</strong> ${countryInfo.capital}</p>
-                    <p style="margin: 4px 0; color: #666;"><strong>Region:</strong> ${countryInfo.region}</p>
-                    <p style="margin: 4px 0; color: #666;"><strong>Population:</strong> ${countryInfo.population}</p>
-                    <p style="margin: 4px 0; color: #666;"><strong>Description:</strong> ${countryInfo.description}</p>
-                    <p style="margin: 4px 0; color: #999; font-size: 12px;">No data points in this region</p>
+                  <div class="p-2">
+                    <h4 class="m-0 mb-2 text-gray-800 font-semibold">${countryName}</h4>
+                    <p class="my-1 text-gray-600"><span class="font-medium">Capital:</span> ${countryInfo.capital}</p>
+                    <p class="my-1 text-gray-600"><span class="font-medium">Region:</span> ${countryInfo.region}</p>
+                    <p class="my-1 text-gray-600"><span class="font-medium">Population:</span> ${countryInfo.population}</p>
+                    <p class="my-1 text-gray-600"><span class="font-medium">Description:</span> ${countryInfo.description}</p>
+                    <p class="my-1 text-gray-500 text-xs">No data points in this region</p>
                   </div>
                 `;
               } else {
                 // Show basic info for countries without any data
                 return `
-                  <div style="padding: 8px;">
-                    <h4 style="margin: 0 0 8px 0; color: #333;">${countryName}</h4>
-                    <p style="margin: 4px 0; color: #666;"><strong>Status:</strong> No data available</p>
-                    <p style="margin: 4px 0; color: #999; font-size: 12px;">Click to explore this region</p>
+                  <div class="p-2">
+                    <h4 class="m-0 mb-2 text-gray-800 font-semibold">${countryName}</h4>
+                    <p class="my-1 text-gray-600"><span class="font-medium">Status:</span> No data available</p>
+                    <p class="my-1 text-gray-500 text-xs">Click to explore this region</p>
                   </div>
                 `;
               }
@@ -142,6 +142,23 @@ const GeoMap = () => {
           }
           
           return "";
+        },
+      },
+      geo: {
+        map: "world",
+        roam: true,
+        itemStyle: {
+          areaColor: "transparent",
+          borderColor: "transparent",
+        },
+        emphasis: {
+          itemStyle: { areaColor: "transparent" },
+          label: {
+            show: false,
+          },
+        },
+        label: {
+          show: false,
         },
       },
       series: [
@@ -185,7 +202,7 @@ const GeoMap = () => {
     };
   }, []);
 
-  return <div ref={chartRef} style={{ width: "100%", height: "600px" }} />;
+  return <div ref={chartRef} className="w-full h-[600px]" />;
 };
 
 export default GeoMap;
